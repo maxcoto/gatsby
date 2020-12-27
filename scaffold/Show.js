@@ -35,10 +35,6 @@ class [+up_singular+]Show extends React.Component {
       )
     }
   }
-  
-  componentDidMount(newProps){
-    console.log("this:", this.props.computedMatch);
-  }
 
   onClick(){
     const { id } = this.state.[+singular+]
