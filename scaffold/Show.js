@@ -15,7 +15,7 @@ import avatar from "assets/img/faces/marc.jpg";
 
 const styles = {};
 
-class Show[+up_singular+] extends React.Component {  
+class [+up_singular+]Show extends React.Component {  
   constructor(props) {
     super(props)
 
@@ -72,4 +72,4 @@ class Show[+up_singular+] extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Show[+up_singular+]);
+export default withStyles(styles, { withTheme: true })([+up_singular+]Show);

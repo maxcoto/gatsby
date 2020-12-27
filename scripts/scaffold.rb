@@ -100,34 +100,34 @@ PATH = '../../material-react/src'
 
 # VIEWS ----------------------------------------------------------------
 
-# FileUtils.mkdir_p("#{PATH}/views/#{up_plural}")
-# filenames = ["Edit", "Fields", "Form", "List", "New", "Show"]
-# filenames.each do |filename|
-#   output = File.open("#{PATH}/views/#{up_plural}/#{up_singular}#{filename}.js", "a")
-#   File.foreach("../scaffold/#{filename}.js") do |line|
-#     line = line.gsub("[+singular+]", singular)
-#     line = line.gsub("[+plural+]", plural)
-#     line = line.gsub("[+up_singular+]", up_singular)
-#     line = line.gsub("[+up_plural+]", up_plural)
-#     line = line.gsub("[+show_fields+]", show_fields.join("\n\t\t\t\t"))
-#     line = line.gsub("[+edit_fields+]", edit_fields.join("\n"))
-#     line = line.gsub("[+table_heads+]", table_heads.join(""))
-#     line = line.gsub("[+table_data+]",  table_data.join("\n\t\t\t\t\t\t\t\t\t\t\t"))
-#     line = line.gsub("[+lookup_data+]", lookup_data.join(" || \n\t\t\t\t\t"))
-#     output.write(line)
-#   end
-#   output.close
-# end
+FileUtils.mkdir_p("#{PATH}/views/#{up_plural}")
+filenames = ["Edit", "Fields", "Form", "List", "New", "Show"]
+filenames.each do |filename|
+  output = File.open("#{PATH}/views/#{up_plural}/#{up_singular}#{filename}.js", "a")
+  File.foreach("../scaffold/#{filename}.js") do |line|
+    line = line.gsub("[+singular+]", singular)
+    line = line.gsub("[+plural+]", plural)
+    line = line.gsub("[+up_singular+]", up_singular)
+    line = line.gsub("[+up_plural+]", up_plural)
+    line = line.gsub("[+show_fields+]", show_fields.join("\n\t\t\t\t"))
+    line = line.gsub("[+edit_fields+]", edit_fields.join("\n"))
+    line = line.gsub("[+table_heads+]", table_heads.join(""))
+    line = line.gsub("[+table_data+]",  table_data.join("\n\t\t\t\t\t\t\t\t\t\t\t"))
+    line = line.gsub("[+lookup_data+]", lookup_data.join(" || \n\t\t\t\t\t"))
+    output.write(line)
+  end
+  output.close
+end
 
 
 # ROUTES -----------------------------------------------------------------
+
 filenames = ["Edit", "List", "New", "Show"]
 
 new_includes = ["// #{plural} imports"]
 filenames.each do |filename|
   new_includes.push("import #{up_singular}#{filename} from 'views/#{up_plural}/#{up_singular}#{filename}.js'")
 end
-new_includes.push("\n")
 new_includes.push("//[+add_includes+]")
 
 new_routes = """
@@ -136,10 +136,8 @@ new_routes = """
   { path: '/#{plural}/:id/edit', component: #{up_singular}Edit, layout: '', hidden: true },
   { path: '/#{plural}/:id',      component: #{up_singular}Show, layout: '', hidden: true },
   { path: '/#{plural}',          component: #{up_singular}List, layout: '', name: '#{up_plural}', icon: Dashboard },
-  
   //[+add_routes+]
 """
-
 
 routes_path = "#{PATH}/routes.js"
 routes_file = File.read(routes_path)

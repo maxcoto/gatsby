@@ -30,7 +30,7 @@ const styles = {
 };
 
 
-class New[+up_singular+] extends React.Component {
+class [+up_singular+]New extends React.Component {
 
   constructor(props) {
     super(props)
@@ -104,5 +104,5 @@ class New[+up_singular+] extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(New[+up_singular+]);
+export default withStyles(styles, { withTheme: true })([+up_singular+]New);
 

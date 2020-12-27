@@ -37,7 +37,7 @@ const styles = {
   }
 };
 
-class Edit[+up_singular+] extends React.Component {
+class [+up_singular+]Edit extends React.Component {
 
   constructor(props) {
     super(props)
@@ -130,6 +130,6 @@ class Edit[+up_singular+] extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Edit[+up_singular+]);
+export default withStyles(styles, { withTheme: true })([+up_singular+]Edit);
 
 
