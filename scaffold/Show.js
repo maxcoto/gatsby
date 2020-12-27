@@ -42,7 +42,6 @@ class [+up_singular+]Show extends React.Component {
   }
 
   render() {
-    const { classes } = this.props
     const { [+singular+] } = this.state
     if(![+singular+]) return null
     
