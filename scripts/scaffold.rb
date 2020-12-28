@@ -46,6 +46,28 @@ ARGV.each do |field|
     )
   end
   
+  if type == "integer" || type == "float"
+    edit_fields.push(
+      """
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <CustomInput
+              labelText='#{label}'
+              id='#{name}'
+              formControlProps={{ fullWidth: true }}
+              inputProps={{
+                onChange,
+                name: '#{name}',
+                value: #{singular}.#{name},
+                type: 'number'
+              }}
+            />
+          </GridItem>
+        </GridContainer>
+      """
+    )
+  end
+  
   if type == "list"
     edit_fields.push(
       """
