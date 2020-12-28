@@ -1,11 +1,12 @@
 import React from 'react'
 
 // core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import CustomSelect from "components/CustomSelect/CustomSelect.js";
-import CardBody from "components/Card/CardBody.js";
+import GridItem from "components/Grid/GridItem.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
+import CustomSelect from "components/CustomSelect/CustomSelect.js"
+import CardBody from "components/Card/CardBody.js"
+import DatePicker from "components/DatePicker/DatePicker.js"
 
 //[++]
 //[+import_constants+]
