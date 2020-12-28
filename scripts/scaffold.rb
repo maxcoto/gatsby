@@ -90,6 +90,29 @@ ARGV.each do |field|
     )
   end
   
+  # values from props are pluraly hardcoded
+  if type == "refs"
+    edit_fields.push(
+      """
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <CustomSelect
+              labelText='#{label}'
+              id='#{name}'
+              formControlProps={{ fullWidth: true }}
+              values={ #{name}s }
+              onChange={onChange}
+              inputProps={{
+                name: '#{name}_id',
+                value: #{singular}.#{name}_id || ''
+              }}
+            />
+          </GridItem>
+        </GridContainer>
+      """
+    )
+  end
+  
   if type == "text"
     edit_fields.push(
       """
