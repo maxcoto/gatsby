@@ -144,8 +144,9 @@ ARGV.each do |field|
             <DatePicker
               labelText='#{label}'
               id='#{name}'
+              name='#{name}'
+              onChange={onChange}
               inputProps={{
-                onChange,
                 name: '#{name}',
                 value: #{singular}.#{name}
               }}
