@@ -7,8 +7,9 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import CustomSelect from "components/CustomSelect/CustomSelect.js";
 import CardBody from "components/Card/CardBody.js";
 
-import { statuses, levels, leadSources, contactMethods } from 'variables/general'
-
+//[++]
+//[+import_constants+]
+//import { statuses, levels, leadSources, contactMethods } from 'variables/general'
 
 export default class [+up_singular+]Form extends React.Component {
   render() {
