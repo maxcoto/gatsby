@@ -135,6 +135,27 @@ ARGV.each do |field|
       """
     )
   end
+  
+  if type == "datetime"
+    edit_fields.push(
+      """
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <DatePicker
+              labelText='#{label}'
+              id='#{name}'
+              inputProps={{
+                onChange,
+                name: '#{name}',
+                value: #{singular}.#{name}
+              }}
+            />
+          </GridItem>
+        </GridContainer>
+      """
+    )
+  end
+  
 end
 
 table_heads.push("'Actions'")
